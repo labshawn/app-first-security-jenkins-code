@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "<your-docker-hub-id>/my-cicd-app"
+    registry = "<shawnlab2020>/my-cicd-app"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
