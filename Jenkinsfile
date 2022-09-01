@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "<shawnlab2020>/my-cicd-app"
+    registry = "shawnlab2020/my-cicd-app"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
@@ -34,15 +34,15 @@ pipeline {
     // Uncomment for SAST lab step 
     // Commented section starts
     
-    // stage('SAS Test') {
-    //   steps {
-    //     snykSecurity(
-    //       snykInstallation: 'SnykV2Plugin',
-    //       snykTokenId: 'snyktoken',
-    //       severity: 'medium',
-    //       failOnIssues: true)
-    //   }
-    // }
+    stage('SAS Test') {
+      steps {
+        snykSecurity(
+          snykInstallation: 'SnykV2Plugin',
+          snykTokenId: 'snyktoken',
+          severity: 'medium',
+          failOnIssues: true)
+      }
+    }
     
     // Commented section ends 
     stage('Build image') {
